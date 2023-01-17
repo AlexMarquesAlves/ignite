@@ -1,11 +1,10 @@
-import { StyleSheet, Text, View, StatusBar } from 'react-native';
-import { 
-  useFonts,
+import {
   Inter_400Regular,
   Inter_600SemiBold,
   Inter_700Bold,
-  Inter_800ExtraBold
+  Inter_800ExtraBold, useFonts
 } from '@expo-google-fonts/inter';
+import { StatusBar, StyleSheet, Text, View } from 'react-native';
 
 import { Loading } from './src/components/Loading';
 
