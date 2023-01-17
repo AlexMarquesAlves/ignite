@@ -8,7 +8,6 @@ function App() {
       <Habit completed={10} />
       <Habit completed={20} />
       <Habit completed={30} />
-
     </div>
   );
 }

@@ -1,5 +1,5 @@
 interface HabitProps {
-  completed: number
+  completed: number;
 }
 
 export const Habit = ({ completed }: HabitProps) => {
