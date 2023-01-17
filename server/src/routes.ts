@@ -28,4 +28,12 @@ export async function appRoutes(app: FastifyInstance) {
       },
     });
   });
+
+  app.get('/day', async (request) => {
+    const getDayParams = z.object({
+      date: z.coerce.date(),
+    });
+
+    const { date } = getDayParams.parse(request.query);
+  });
 }
