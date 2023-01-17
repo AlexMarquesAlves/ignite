@@ -88,6 +88,19 @@ async function run() {
         },
       },
     }),
+
+    /**
+     * Habits (Complete/Available): 2/2
+     */
+    prisma.day.create({
+      data: {
+        /** Wednesday */
+        date: new Date('2023-01-04T03:00:00.000z'),
+        dayHabits: {
+          create: [{ habit_id: firstHabitId }, { habit_id: secondHabitId }],
+        },
+      },
+    }),
   ]);
 }
 
