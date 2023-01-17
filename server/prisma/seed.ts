@@ -57,6 +57,38 @@ async function run() {
       },
     }),
   ]);
+
+  await Promise.all([
+    /**
+     * Habits (Complete/Available): 1/1
+     */
+    prisma.day.create({
+      data: {
+        /** Monday */
+        date: new Date('2023-01-02T03:00:00.000z'),
+        dayHabits: {
+          create: {
+            habit_id: firstHabitId,
+          },
+        },
+      },
+    }),
+
+    /**
+     * Habits (Complete/Available): 1/1
+     */
+    prisma.day.create({
+      data: {
+        /** Friday */
+        date: new Date('2023-01-06T03:00:00.000z'),
+        dayHabits: {
+          create: {
+            habit_id: firstHabitId,
+          },
+        },
+      },
+    }),
+  ]);
 }
 
 run()
