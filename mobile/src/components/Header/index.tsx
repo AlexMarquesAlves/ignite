@@ -1,12 +1,12 @@
 import { Feather } from '@expo/vector-icons';
 import { Text, TouchableOpacity, View } from "react-native";
 import colors from 'tailwindcss/colors';
-
 import Logo from '../../assets/logo.svg';
 
 export function Header() {
   return (
     <View className="w-full flex-row items-center justify-between">
+
       <Logo />
 
       <TouchableOpacity
@@ -22,6 +22,7 @@ export function Header() {
         <Text className="text-white ml-3 font-semibold text-base">
           Novo
         </Text>
+
       </TouchableOpacity>
     </View>
   )
