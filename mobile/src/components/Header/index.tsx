@@ -1,23 +1,13 @@
-import { View, Text, StyleSheet } from 'react-native';
+import { View } from "react-native";
 
-export const Header = () => {
+import Logo from '../../assets/logo.svg';
+
+export function Header() {
   return (
-    <View style={ styles.container }>
-      <Text style={ styles.title }>Header</Text>
-    </View>
-  );
-};
+    <View className="w-full flex-row items-center justify-between">
+      <Logo />
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#312e38',
-  },
-  title: {
-    fontWeight: 'bold',
-    fontSize: 22,
-    color: '#fff',
-  },
-});
+
+    </View>
+  )
+}
