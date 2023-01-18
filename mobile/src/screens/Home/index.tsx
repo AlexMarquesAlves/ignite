@@ -1,23 +1,36 @@
-import { View, Text, StyleSheet } from 'react-native';
+import { Text, View } from 'react-native';
 
-export const Home = () => {
+import { generateRangeDatesFromYearStart } from '../../utils/generate-range-between-dates';
+
+import { DAY_SIZE } from '../../components/HabitDay';
+import { Header } from '../../components/Header';
+
+const weekDays = ['D', 'S', 'T', 'Q', 'Q', 'S', 'S'];
+const datesFromYearStart = generateRangeDatesFromYearStart();
+const minimunSummaryDatesSizes = 18 * 5;
+const amountOfDaysToFill = minimunSummaryDatesSizes - datesFromYearStart.length
+
+export function Home() {
   return (
-    <View style={ styles.container }>
-      <Text style={ styles.title }>Home</Text>
-    </View>
-  );
-};
+    <View className='flex-1 bg-background px-8 pt-16'>
+      <Header />
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#312e38',
-  },
-  title: {
-    fontWeight: 'bold',
-    fontSize: 22,
-    color: '#fff',
-  },
-});
+      <View className="flex-row mt-6 mb-2">
+        {
+          weekDays.map((weekDay, i) => (
+            <Text
+              key={`${weekDay}-${i}`}
+              className="text-zinc-400 text-xl font-bold text-center mx-1"
+              style={{ width: DAY_SIZE }}
+            >
+              {weekDay}
+            </Text>
+          ))
+        }
+      </View>
+
+
+
+    </View>
+  )
+} 
