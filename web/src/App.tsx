@@ -10,8 +10,6 @@ export function App() {
         <Header />
         <SummaryTable />
       </div>
-
     </div>
   );
 }
-
