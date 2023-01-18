@@ -1,8 +1,8 @@
-import { Text, View } from 'react-native';
+import { ScrollView, Text, View } from 'react-native';
 
 import { generateRangeDatesFromYearStart } from '../../utils/generate-range-between-dates';
 
-import { DAY_SIZE } from '../../components/HabitDay';
+import { DAY_SIZE, HabitDay } from '../../components/HabitDay';
 import { Header } from '../../components/Header';
 
 const weekDays = ['D', 'S', 'T', 'Q', 'Q', 'S', 'S'];
@@ -29,7 +29,20 @@ export function Home() {
         }
       </View>
 
+      <ScrollView
+        showsVerticalScrollIndicator={false}
+        contentContainerStyle={{ paddingBottom: 100 }}
+      >
+        <View className='flex-row flex-wrap'>
+          {
+            datesFromYearStart.map(date => (
+              <HabitDay key={date.toISOString()} />
+            ))
+          }
 
+
+        </View>
+      </ScrollView>
 
     </View>
   )
