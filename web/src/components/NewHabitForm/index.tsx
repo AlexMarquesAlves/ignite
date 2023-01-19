@@ -1,3 +1,4 @@
+import { Check } from "phosphor-react";
 
 export function NewHabitForm() {
   return (
@@ -18,7 +19,10 @@ export function NewHabitForm() {
         Qual a recorrência?
       </label>
 
-
+      <button type="submit" className="flex items-center justify-center gap-3 p-4 mt-6 font-semibold bg-green-600 rounded-lg hover:bg-green-500">
+        <Check size={20} weight="bold" />
+        Confirmar
+      </button>
     </form>
   )
 }
