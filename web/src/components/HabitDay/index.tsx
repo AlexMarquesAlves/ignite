@@ -1,6 +1,11 @@
 import * as Popover from '@radix-ui/react-popover';
 
-export function HabitDay({ completed, amount }) {
+interface HabitDayProps {
+  completed: number;
+  amount: number;
+}
+
+export function HabitDay({ completed, amount }: HabitDayProps) {
   const completedPercentage = Math.round((completed / amount) * 100);
 
   return (
