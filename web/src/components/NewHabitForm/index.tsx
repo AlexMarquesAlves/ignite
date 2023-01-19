@@ -1,7 +1,12 @@
-export const NewHabitForm = () => {
+
+export function NewHabitForm() {
   return (
-    <>
-      <h1>NewHabitForm</h1>
-    </>
-  );
-};
+    <form className="flex flex-col w-full mt-6">
+      <label htmlFor="title" className="font-semibold leading-tight">
+        Qual seu comprometimento?
+      </label>
+
+
+    </form>
+  )
+}
