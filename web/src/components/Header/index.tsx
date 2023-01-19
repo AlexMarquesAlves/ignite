@@ -1,13 +1,12 @@
 import * as Dialog from '@radix-ui/react-dialog';
-import { Plus, X } from "phosphor-react";
+import { Plus, X } from 'phosphor-react';
 import LogoImage from '../../assets/logo.svg';
-import { NewHabitForm } from "../NewHabitForm";
+import { NewHabitForm } from '../NewHabitForm';
 
 export function Header() {
-
   return (
     <div className="flex items-center justify-between w-full max-w-3xl mx-auto">
-      <img src={LogoImage} alt="" />
+      <img src={LogoImage} alt="Habits logo" />
 
       <Dialog.Root>
         <Dialog.Trigger
@@ -33,10 +32,7 @@ export function Header() {
             <NewHabitForm />
           </Dialog.Content>
         </Dialog.Portal>
-
       </Dialog.Root>
-
-
     </div>
   );
 }

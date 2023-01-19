@@ -1,19 +1,31 @@
-interface ProgressBarProps {
-  progress: number
-}
+import { Check } from 'phosphor-react';
 
-export const ProgressBar = (props: ProgressBarProps) => {
+export function NewHabitForm() {
   return (
-    <div className='w-full h-3 mt-4 rounded-xl bg-zinc-700'>
-      <div
-        role="progressbar"
-        aria-label="Progresso de hábitos completados nesse dia"
-        aria-valuenow={props.progress}
-        className="h-3 rounded-xl bg-violet-600"
-        style={{
-          width: `${props.progress}%`
-        }}
+    <form className="flex flex-col w-full mt-6">
+      <label htmlFor="title" className="font-semibold leading-tight">
+        Qual seu comprometimento?
+      </label>
+
+      <input
+        type="text"
+        id="title"
+        placeholder="ex.: Exercícios, dormir bem, etc..."
+        className="p-4 mt-3 text-white rounded-lg bg-zinc-800 placeholder:text-zinc-400"
+        autoFocus
       />
-    </div>
-  )
+
+      <label htmlFor="" className="mt-4 font-semibold leading-tight">
+        Qual a recorrência?
+      </label>
+
+      <button
+        type="submit"
+        className="flex items-center justify-center gap-3 p-4 mt-6 font-semibold bg-green-600 rounded-lg hover:bg-green-500"
+      >
+        <Check size={20} weight="bold" />
+        Confirmar
+      </button>
+    </form>
+  );
 }
