@@ -1,12 +1,13 @@
 import './src/lib/dayjs';
 
-import {
+import { StatusBar } from 'react-native';
+import { 
+  useFonts,
   Inter_400Regular,
   Inter_600SemiBold,
   Inter_700Bold,
-  Inter_800ExtraBold, useFonts
+  Inter_800ExtraBold
 } from '@expo-google-fonts/inter';
-import { StatusBar } from 'react-native';
 
 import { Loading } from './src/components/Loading';
 import { Routes } from './src/routes';

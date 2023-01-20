@@ -1,17 +1,16 @@
-import { useRoute } from "@react-navigation/native";
-import dayjs from "dayjs";
-import { ScrollView, Text, View } from "react-native";
-
-import { BackButton } from "../../components/BackButton";
-import { Checkbox } from "../../components/Checkbox";
-import { ProgressBar } from "../../components/ProgressBar";
+import { useRoute } from '@react-navigation/native';
+import dayjs from 'dayjs';
+import { ScrollView, Text, View } from 'react-native';
+import { BackButton } from '../../components/BackButton';
+import { Checkbox } from '../../components/Checkbox';
+import { ProgressBar } from '../../components/ProgressBar';
 
 interface Params {
   date: string;
 }
 
 export function Habit() {
-  const route = useRoute()
+  const route = useRoute();
   const { date } = route.params as Params;
 
   const parsedDate = dayjs(date);
@@ -37,17 +36,11 @@ export function Habit() {
         <ProgressBar progress={30} />
 
         <View className="mt-6">
-          <Checkbox
-            title="Beber 2L de água"
-            checked={false}
-          />
+          <Checkbox title="Beber 2L de água" checked={false} />
 
-          <Checkbox
-            title="Caminhar"
-            checked
-          />
+          <Checkbox title="Caminhar" checked />
         </View>
       </ScrollView>
     </View>
-  )
+  );
 }
