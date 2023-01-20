@@ -1,12 +1,13 @@
 import * as Dialog from '@radix-ui/react-dialog';
 import { Plus, X } from 'phosphor-react';
+
 import LogoImage from '../../assets/logo.svg';
 import { NewHabitForm } from '../NewHabitForm';
 
 export function Header() {
   return (
     <div className="flex items-center justify-between w-full max-w-3xl mx-auto">
-      <img src={LogoImage} alt="Habits logo" />
+      <img src={LogoImage} alt="" />
 
       <Dialog.Root>
         <Dialog.Trigger
@@ -26,7 +27,7 @@ export function Header() {
             </Dialog.Close>
 
             <Dialog.Title className="text-3xl font-extrabold leading-tight">
-              Criar hábito
+              Criar bábito
             </Dialog.Title>
 
             <NewHabitForm />

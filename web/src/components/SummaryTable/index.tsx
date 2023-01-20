@@ -1,40 +1,31 @@
-import dayjs from "dayjs";
-import { useEffect, useState } from "react";
-import { api } from "../../lib/axios";
-import { generateDatesFromYearBeginning } from "../../utils/generate-dates-from-year-beginning";
-import { HabitDay } from "../HabitDay";
+import dayjs from 'dayjs';
+import { useEffect, useState } from 'react';
+import { api } from '../../lib/axios';
+import { generateDatesFromYearBeginning } from '../../utils/generate-dates-from-year-beginning';
+import { HabitDay } from '../HabitDay';
 
-const weekDays = [
-  'D',
-  'S',
-  'T',
-  'Q',
-  'Q',
-  'S',
-  'S',
-];
+const weekDays = ['D', 'S', 'T', 'Q', 'Q', 'S', 'S'];
 
-const summaryDates = generateDatesFromYearBeginning()
+const summaryDates = generateDatesFromYearBeginning();
 
-const minimumSummaryDatesSize = 18 * 7 // 18 weeks
-const amountOfDaysToFill = minimumSummaryDatesSize - summaryDates.length
+const minimumSummaryDatesSize = 18 * 7; // 18 weeks
+const amountOfDaysToFill = minimumSummaryDatesSize - summaryDates.length;
 
 type Summary = {
   id: string;
   date: string;
   amount: number;
   completed: number;
-}[]
+}[];
 
 export function SummaryTable() {
-
-  const [summary, setSummary] = useState<Summary>([])
+  const [summary, setSummary] = useState<Summary>([]);
 
   useEffect(() => {
-    api.get('summary').then(response => {
-      setSummary(response.data)
-    })
-  }, [])
+    api.get('summary').then((response) => {
+      setSummary(response.data);
+    });
+  }, []);
 
   return (
     <div className="flex w-full">
@@ -47,16 +38,15 @@ export function SummaryTable() {
             >
               {weekDay}
             </div>
-          )
+          );
         })}
       </div>
 
       <div className="grid grid-flow-col gap-3 grid-rows-7">
         {summaryDates.map((date) => {
-
-          const dayInSummary = summary.find(day => {
-            return dayjs(date).isSame(day.date, 'day')
-          })
+          const dayInSummary = summary.find((day) => {
+            return dayjs(date).isSame(day.date, 'day');
+          });
 
           return (
             <HabitDay
@@ -65,14 +55,18 @@ export function SummaryTable() {
               amount={dayInSummary?.amount}
               completed={dayInSummary?.completed}
             />
-          )
+          );
         })}
 
-        {amountOfDaysToFill > 0 && Array.from({ length: amountOfDaysToFill }).map((_, i) => {
-          return (
-            <div key={i} className="w-10 h-10 border-2 rounded-lg cursor-not-allowed bg-zinc-900 border-zinc-800 opacity-40" />
-          )
-        })}
+        {amountOfDaysToFill > 0 &&
+          Array.from({ length: amountOfDaysToFill }).map((_, i) => {
+            return (
+              <div
+                key={i}
+                className="w-10 h-10 border-2 rounded-lg cursor-not-allowed bg-zinc-900 border-zinc-800 opacity-40"
+              />
+            );
+          })}
       </div>
     </div>
   );
