@@ -1,23 +1,53 @@
-import { View, Text, StyleSheet } from 'react-native';
+import { useRoute } from "@react-navigation/native";
+import dayjs from "dayjs";
+import { ScrollView, Text, View } from "react-native";
 
-export const Habit = () => {
+import { BackButton } from "../../components/BackButton";
+import { Checkbox } from "../../components/Checkbox";
+import { ProgressBar } from "../../components/ProgressBar";
+
+interface Params {
+  date: string;
+}
+
+export function Habit() {
+  const route = useRoute()
+  const { date } = route.params as Params;
+
+  const parsedDate = dayjs(date);
+  const dayOfWeek = parsedDate.format('dddd');
+  const dayAndMonth = parsedDate.format('DD/MM');
+
   return (
-    <View style={ styles.container }>
-      <Text style={ styles.title }>Habit</Text>
-    </View>
-  );
-};
+    <View className="flex-1 px-8 pt-16 bg-background">
+      <ScrollView
+        showsVerticalScrollIndicator={false}
+        contentContainerStyle={{ paddingBottom: 100 }}
+      >
+        <BackButton />
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#312e38',
-  },
-  title: {
-    fontWeight: 'bold',
-    fontSize: 22,
-    color: '#fff',
-  },
-});
+        <Text className="mt-6 text-base font-semibold lowercase text-zinc-400">
+          {dayOfWeek}
+        </Text>
+
+        <Text className="text-3xl font-extrabold text-white">
+          {dayAndMonth}
+        </Text>
+
+        <ProgressBar progress={30} />
+
+        <View className="mt-6">
+          <Checkbox
+            title="Beber 2L de água"
+            checked={false}
+          />
+
+          <Checkbox
+            title="Caminhar"
+            checked
+          />
+        </View>
+      </ScrollView>
+    </View>
+  )
+}
