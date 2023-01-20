@@ -42,14 +42,14 @@ export function HabitDay({ completed, amount }: HabitDayProps) {
           <ProgressBar progress={completedPercentage} />
 
           <div className="flex flex-col gap-3 mt-6">
-            <Checkbox.Root className='flex items-center gap-3 '>
-              <div className="flex items-center justify-center w-8 h-8 border-2 rounded-lg bg-zinc-900 border-zin-800">
+            <Checkbox.Root className="flex items-center gap-3 group">
+              <div className="flex items-center justify-center w-8 h-8 border-2 rounded-lg bg-zinc-900 border-zin-800 group-data-[state=checked]:bg-green-500 group-data-[state=checked]:border-green-500">
                 <Checkbox.Indicator>
-                  <Check size={20} className='text-white' />
+                  <Check size={20} className="text-white" />
                 </Checkbox.Indicator>
               </div>
 
-              <span className='text-xl font-semibold leading-tight text-white'>
+              <span className="text-xl font-semibold leading-tight text-white group-data-[state=checked]:line-through group-data-[state=checked]:text-zinc-400">
                 Beber 2L de agua
               </span>
             </Checkbox.Root>
