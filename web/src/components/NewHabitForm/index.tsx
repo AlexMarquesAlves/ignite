@@ -18,6 +18,15 @@ export function NewHabitForm() {
 
   async function createNewHabit(event: FormEvent) {
     event.preventDefault();
+
+    if (!title || weekDays.length === 0) {
+      return;
+    }
+
+    setTitle('');
+    setWeekDays([]);
+
+    alert('Hábito criado com sucesso!');
   }
 
   function handleToggleWeekDay(weekDay: number) {
