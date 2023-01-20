@@ -1,23 +1,16 @@
-import { View, Text, StyleSheet } from 'react-native';
+import { View } from "react-native";
 
-export const ProgressBar = () => {
+interface Props {
+  progress?: number;
+}
+
+export function ProgressBar({ progress = 0 }: Props) {
   return (
-    <View style={ styles.container }>
-      <Text style={ styles.title }>ProgressBar</Text>
+    <View className="w-full h-3 mt-4 rounded-xl bg-zinc-700">
+      <View
+        className="h-3 rounded-xl bg-violet-600"
+        style={{ width: `${progress}%` }}
+      />
     </View>
-  );
-};
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#312e38',
-  },
-  title: {
-    fontWeight: 'bold',
-    fontSize: 22,
-    color: '#fff',
-  },
-});
+  )
+}
