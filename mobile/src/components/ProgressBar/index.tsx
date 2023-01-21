@@ -1,4 +1,4 @@
-import { View } from "react-native";
+import { View } from 'react-native';
 
 interface Props {
   progress?: number;
@@ -12,5 +12,5 @@ export function ProgressBar({ progress = 0 }: Props) {
         style={{ width: `${progress}%` }}
       />
     </View>
-  )
+  );
 }
