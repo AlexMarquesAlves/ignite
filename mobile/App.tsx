@@ -14,11 +14,13 @@ export default function App() {
     Inter_400Regular,
     Inter_600SemiBold,
     Inter_700Bold,
-    Inter_800ExtraBold,
+    Inter_800ExtraBold
   });
 
   if (!fontsLoaded) {
-    return <Loading />;
+    return (
+      <Loading />
+    );
   }
 
   return (

@@ -58,41 +58,65 @@ export function New() {
           className="h-12 pl-4 mt-3 text-white border-2 rounded-lg bg-zinc-900 border-zinc-800 focus:border-green-600"
           placeholder="Exercícios, dormir bem, etc..."
           placeholderTextColor={colors.zinc[400]}
+<<<<<<< HEAD
           onChangeText={setTitle}
           value={title}
+=======
+>>>>>>> Mobile
         />
 
         <Text className="mt-4 mb-3 text-base font-semibold text-white">
           Qual a recorrência?
         </Text>
 
-        {
-          availableWeekDays.map((weekDay, index) => (
-            <Checkbox
-              key={weekDay}
-              title={weekDay}
-              checked={weekDays.includes(index)}
-              onPress={() => handleToggleWeekDay(index)}
-            />
-          ))
-        }
-
-        <TouchableOpacity
-          className="flex-row items-center justify-center w-full mt-6 bg-green-600 rounded-md h-14"
-          activeOpacity={0.7}
-          onPress={handleCreateNewHabit}
-        >
-          <Feather
-            name="check"
-            size={20}
-            color={colors.white}
+<<<<<<< HEAD
+  {
+    availableWeekDays.map((weekDay, index) => (
+      <Checkbox
+        key={weekDay}
+        title={weekDay}
+        checked={weekDays.includes(index)}
+        onPress={() => handleToggleWeekDay(index)}
+      />
+    ))
+  }
+=======
+        {availableWeekDays.map((weekDay, index) => (
+          <Checkbox
+            key={weekDay}
+            title={weekDay}
+            checked={weekDays.includes(index)}
+            onPress={() => handleToggleWeekDay(index)}
           />
+        ))}
+>>>>>>> Mobile
 
-          <Text className="ml-2 text-base font-semibold text-white">
-            Confirmar
-          </Text>
-        </TouchableOpacity>
-      </ScrollView>
-    </View>
+  <TouchableOpacity
+    className="flex-row items-center justify-center w-full mt-6 bg-green-600 rounded-md h-14"
+    activeOpacity={0.7}
+<<<<<<< HEAD
+    onPress={handleCreateNewHabit}
+  >
+    <Feather
+      name="check"
+      size={20}
+      color={colors.white}
+    />
+=======
+        >
+          <Feather name="check" size={20} color={colors.white} />
+>>>>>>> Mobile
+
+    <Text className="ml-2 text-base font-semibold text-white">
+      Confirmar
+    </Text>
+  </TouchableOpacity>
+      </ScrollView >
+    </View >
+<<<<<<< HEAD
   )
 }
+=======
+  );
+}
+>>>>>>> Mobile

@@ -16,10 +16,14 @@ export function Header() {
         className="flex-row items-center px-4 border rounded-lg h-11 border-violet-500"
         onPress={() => navigate('new')}
       >
-        <Feather name="plus" color={colors.violet[500]} size={20} />
+        <Feather
+          name="plus"
+          color={colors.violet[500]}
+          size={20}
+        />
 
         <Text className="ml-3 text-base font-semibold text-white">Novo</Text>
       </TouchableOpacity>
     </View>
-  );
+  )
 }

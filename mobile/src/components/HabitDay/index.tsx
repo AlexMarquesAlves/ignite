@@ -1,5 +1,8 @@
+<<<<<<< HEAD
 import clsx from 'clsx';
 import dayjs from 'dayjs';
+=======
+>>>>>>> Mobile
 import {
   Dimensions,
   TouchableOpacity,
