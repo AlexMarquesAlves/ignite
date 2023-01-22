@@ -2,6 +2,8 @@ import { Feather } from '@expo/vector-icons';
 import { useState } from "react";
 import { Alert, ScrollView, Text, TextInput, TouchableOpacity, View } from "react-native";
 import colors from "tailwindcss/colors";
+
+import React from "react";
 import { BackButton } from "../../components/BackButton";
 import { Checkbox } from "../../components/Checkbox";
 import { api } from "../../lib/axios";
@@ -58,65 +60,41 @@ export function New() {
           className="h-12 pl-4 mt-3 text-white border-2 rounded-lg bg-zinc-900 border-zinc-800 focus:border-green-600"
           placeholder="Exercícios, dormir bem, etc..."
           placeholderTextColor={colors.zinc[400]}
-<<<<<<< HEAD
           onChangeText={setTitle}
           value={title}
-=======
->>>>>>> Mobile
         />
 
         <Text className="mt-4 mb-3 text-base font-semibold text-white">
           Qual a recorrência?
         </Text>
 
-<<<<<<< HEAD
-  {
-    availableWeekDays.map((weekDay, index) => (
-      <Checkbox
-        key={weekDay}
-        title={weekDay}
-        checked={weekDays.includes(index)}
-        onPress={() => handleToggleWeekDay(index)}
-      />
-    ))
-  }
-=======
-        {availableWeekDays.map((weekDay, index) => (
-          <Checkbox
-            key={weekDay}
-            title={weekDay}
-            checked={weekDays.includes(index)}
-            onPress={() => handleToggleWeekDay(index)}
-          />
-        ))}
->>>>>>> Mobile
+        {
+          availableWeekDays.map((weekDay, index) => (
+            <Checkbox
+              key={weekDay}
+              title={weekDay}
+              checked={weekDays.includes(index)}
+              onPress={() => handleToggleWeekDay(index)}
+            />
+          ))
+        }
 
-  <TouchableOpacity
-    className="flex-row items-center justify-center w-full mt-6 bg-green-600 rounded-md h-14"
-    activeOpacity={0.7}
-<<<<<<< HEAD
-    onPress={handleCreateNewHabit}
-  >
-    <Feather
-      name="check"
-      size={20}
-      color={colors.white}
-    />
-=======
+        <TouchableOpacity
+          className="flex-row items-center justify-center w-full mt-6 bg-green-600 rounded-md h-14"
+          activeOpacity={0.7}
+          onPress={handleCreateNewHabit}
         >
-          <Feather name="check" size={20} color={colors.white} />
->>>>>>> Mobile
+          <Feather
+            name="check"
+            size={20}
+            color={colors.white}
+          />
 
-    <Text className="ml-2 text-base font-semibold text-white">
-      Confirmar
-    </Text>
-  </TouchableOpacity>
-      </ScrollView >
-    </View >
-<<<<<<< HEAD
+          <Text className="ml-2 text-base font-semibold text-white">
+            Confirmar
+          </Text>
+        </TouchableOpacity>
+      </ScrollView>
+    </View>
   )
 }
-=======
-  );
-}
->>>>>>> Mobile
