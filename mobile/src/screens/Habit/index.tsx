@@ -3,13 +3,16 @@ import clsx from "clsx";
 import dayjs from "dayjs";
 import { useEffect, useState } from "react";
 import { Alert, ScrollView, Text, View } from "react-native";
+
+import { api } from "../../lib/axios";
+import { generateProgressPercentage } from "../../utils/generate-progress-percentage";
+
+import React from "react";
 import { BackButton } from "../../components/BackButton";
 import { Checkbox } from "../../components/Checkbox";
 import { HabitsEmpty } from "../../components/HabitsEmpty";
 import { Loading } from "../../components/Loading";
 import { ProgressBar } from "../../components/ProgressBar";
-import { api } from "../../lib/axios";
-import { generateProgressPercentage } from "../../utils/generate-progress-percentage";
 
 interface Params {
   date: string;
