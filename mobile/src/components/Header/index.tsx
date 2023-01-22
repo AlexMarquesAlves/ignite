@@ -1,11 +1,13 @@
 import { Feather } from '@expo/vector-icons';
-import { useNavigation } from '@react-navigation/native';
-import { Text, TouchableOpacity, View } from 'react-native';
+import { useNavigation } from "@react-navigation/native";
+import { Text, TouchableOpacity, View } from "react-native";
 import colors from 'tailwindcss/colors';
+
+import React from "react";
 import Logo from '../../assets/logo.svg';
 
 export function Header() {
-  const { navigate } = useNavigation();
+  const { navigate } = useNavigation()
 
   return (
     <View className="flex-row items-center justify-between w-full">
@@ -22,7 +24,9 @@ export function Header() {
           size={20}
         />
 
-        <Text className="ml-3 text-base font-semibold text-white">Novo</Text>
+        <Text className="ml-3 text-base font-semibold text-white">
+          Novo
+        </Text>
       </TouchableOpacity>
     </View>
   )
